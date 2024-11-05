@@ -8,13 +8,14 @@ import Typography from '@mui/material/Typography';
 import { _products } from 'src/_mock';
 import { DashboardContent } from 'src/layouts/dashboard';
 
+import { ColorPreview } from 'src/components/color-utils';
+
 import { ProductItem } from '../product-item';
 import { ProductSort } from '../product-sort';
 import { CartIcon } from '../product-cart-widget';
 import { ProductFilters } from '../product-filters';
 
 import type { FiltersProps } from '../product-filters';
-import { ColorPreview } from 'src/components/color-utils';
 
 // ----------------------------------------------------------------------
 

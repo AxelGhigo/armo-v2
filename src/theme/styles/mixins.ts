@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 import type { CSSObject } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
@@ -46,7 +47,9 @@ export type BgGradientProps = {
 };
 
 type bgCircolGradientProps = {
-  arrcolor: string[];
+  arrcolor: {
+    hex:string
+  }[];
   imgUrl?: string;
 };
 

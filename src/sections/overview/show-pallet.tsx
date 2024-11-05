@@ -15,7 +15,7 @@ type Props = CardProps & {
   title?: string;
   subheader?: string;
   handelSetColor: Function;
-  list: {
+  list?: {
     stagione: string;
     image?: string;
     color: {
@@ -23,6 +23,10 @@ type Props = CardProps & {
       name?: string;
     }[];
   };
+};
+type colorPorp = {
+  hex: string;
+  name?: string;
 };
 
 export function ShowPallet({ title, subheader, list, handelSetColor, ...other }: Props) {
@@ -33,7 +37,7 @@ export function ShowPallet({ title, subheader, list, handelSetColor, ...other }:
 
       <Scrollbar sx={{ minHeight: 405 }}>
         <Box sx={{ minWidth: 640 }}>
-          {list.color.map((col) => (
+          {list?.color.map((col) => (
             <PostItem key={col.hex} item={col} handelSetColor={handelSetColor} />
           ))}
         </Box>
@@ -49,7 +53,7 @@ function PostItem({
   item,
   handelSetColor,
   ...other
-}: BoxProps & { item: Props['list'][number]; handelSetColor: Function }) {
+}: BoxProps & { item: colorPorp; handelSetColor: Function }) {
   return (
     <Box
       sx={{

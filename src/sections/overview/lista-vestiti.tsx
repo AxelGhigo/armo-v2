@@ -13,18 +13,13 @@ import { ColorPreview } from 'src/components/color-utils';
 type Props = CardProps & {
   title?: string;
   subheader?: string;
-  color: {
+  colore: {
     hex: string;
     name?: string;
-    status: string;
-    price: number;
-    priceSale: number;
-    url: string;
   };
 };
 
 type CardsPoprs = {
-  image: string;
   color: string;
   status: string;
   price: number;
@@ -63,8 +58,8 @@ const vesiti = [
   },
 ];
 
-export function ListaVestiti({ title, subheader, color, ...other }: Props) {
-  console.log(color);
+export function ListaVestiti({ title, subheader, colore, ...other }: Props) {
+  console.log(colore);
   return (
     <Card {...other}>
       <Grid container spacing={1}>
@@ -72,7 +67,7 @@ export function ListaVestiti({ title, subheader, color, ...other }: Props) {
           <Grid key={abito.name} xs={12} sm={12} md={6}>
             <Cards2
               url={abito.url}
-              color={color.hex}
+              color={colore.hex}
               status={abito.status}
               price={abito.price}
               priceSale={abito.priceSale}

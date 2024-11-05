@@ -132,7 +132,7 @@ export function OverviewAnalyticsView() {
           />
         </Grid>
         <Grid xs={12} md={8} lg={8}>
-          <ListaVestiti title="colori palett" color={{ hex: colore }} />
+          <ListaVestiti title="colori palett" colore={{ hex: colore }} />
         </Grid>
       </Grid>
     </DashboardContent>
