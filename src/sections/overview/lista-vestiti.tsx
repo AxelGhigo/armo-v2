@@ -135,7 +135,7 @@ function Cards2({ color, status, price, priceSale, name, url }: Readonly<CardsPo
           {name}
         </Link>
       </Stack>
-      <Box display="flex" alignItems="center" justifyContent="space-between">
+      <Box display="flex" alignItems="center" justifyContent="space-between" margin={2}>
         <ColorPreview colors={[color, color, color, color]} />
         {renderPrice}
       </Box>
