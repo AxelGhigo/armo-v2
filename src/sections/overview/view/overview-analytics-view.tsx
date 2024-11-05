@@ -29,7 +29,7 @@ const mock = [
       { hex: '#4c4c74', name: 'Independence' },
       { hex: '#343454', name: 'Jacarta' },
     ],
-    image: './public/assets/images/person/pngegg.png',
+    image: 'assets/images/person/pngegg.png',
   },
   {
     stagione: 'inverno',
@@ -45,7 +45,7 @@ const mock = [
       { hex: '#597fb5', name: 'Indaco' },
       { hex: '#318c2e', name: 'Verde' },
     ],
-    image: './public/assets/images/person/pngegg.png',
+    image: '/assets/images/person/pngegg.png',
   },
   {
     stagione: 'primavera',
@@ -61,7 +61,7 @@ const mock = [
       { hex: '#3c4943', name: 'Verde molto scuro' },
       { hex: '#4bb49b', name: 'Verde acqua' },
     ],
-    image: './public/assets/images/person/pngegg.png',
+    image: '/assets/images/person/pngegg.png',
   },
   {
     stagione: 'autunno',
@@ -77,7 +77,7 @@ const mock = [
       { hex: '#757269', name: 'Grigio verde' },
       { hex: '#544f3e', name: 'Verde militare' },
     ],
-    image: './public/assets/images/person/pngegg.png',
+    image: '/assets/images/person/pngegg.png',
   },
 ];
 
