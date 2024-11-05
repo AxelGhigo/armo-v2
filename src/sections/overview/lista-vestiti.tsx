@@ -29,28 +29,28 @@ type CardsPoprs = {
 };
 const vesiti = [
   {
-    url: './public/assets/images/vestiti/tShort2.png',
+    url: '/assets/images/vestiti/tShort2.png',
     status: '',
     name: 'nike',
     price: 22.34,
     priceSale: 15.52,
   },
   {
-    url: './public/assets/images/vestiti/tShort2.png',
+    url: '/assets/images/vestiti/tShort2.png',
     status: 'new',
     name: 'nike',
     price: 22.34,
     priceSale: 15.52,
   },
   {
-    url: './public/assets/images/vestiti/tShort2.png',
+    url: '/assets/images/vestiti/tShort2.png',
     status: 'sale',
     name: 'nike',
     price: 22.34,
     priceSale: 15.52,
   },
   {
-    url: './public/assets/images/vestiti/tShort2.png',
+    url: '/assets/images/vestiti/tShort2.png',
     status: 'sale',
     name: 'nike',
     price: 22.34,

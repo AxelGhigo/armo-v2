@@ -61,12 +61,7 @@ export function PalletStagione({
     >
       <CardActionArea onClick={() => setStagione()}>
         <Box display="flex" justifyContent="center" alignItems="center">
-          <img
-            src="/assets/images/person/pngegg.png"
-            alt="pngegg.png"
-            loading="lazy"
-            height="250px"
-          />
+          <img src={imgUrl} alt="pngegg.png" loading="lazy" height="250px" />
         </Box>
       </CardActionArea>
     </Card>
