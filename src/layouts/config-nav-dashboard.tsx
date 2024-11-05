@@ -38,9 +38,4 @@ export const navData = [
     path: '/sign-in',
     icon: icon('ic-lock'),
   },
-  {
-    title: 'Not found',
-    path: '/404',
-    icon: icon('ic-disabled'),
-  },
 ];

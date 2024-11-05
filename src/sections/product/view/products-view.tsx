@@ -14,6 +14,7 @@ import { CartIcon } from '../product-cart-widget';
 import { ProductFilters } from '../product-filters';
 
 import type { FiltersProps } from '../product-filters';
+import { ColorPreview } from 'src/components/color-utils';
 
 // ----------------------------------------------------------------------
 
@@ -133,6 +134,7 @@ export function ProductsView() {
       <Grid container spacing={3}>
         {_products.map((product) => (
           <Grid key={product.id} xs={12} sm={6} md={3}>
+            <ColorPreview colors={product.colors} />
             <ProductItem product={product} />
           </Grid>
         ))}

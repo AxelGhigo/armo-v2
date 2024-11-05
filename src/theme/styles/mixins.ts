@@ -45,6 +45,11 @@ export type BgGradientProps = {
   imgUrl?: string;
 };
 
+type bgCircolGradientProps = {
+  arrcolor: string[];
+  imgUrl?: string;
+};
+
 export function bgGradient({ color, imgUrl }: BgGradientProps): CSSObject {
   if (imgUrl) {
     return {
@@ -55,6 +60,19 @@ export function bgGradient({ color, imgUrl }: BgGradientProps): CSSObject {
     };
   }
   return { background: `linear-gradient(${color})` };
+}
+
+export function bgCircolGradient({ arrcolor, imgUrl }: bgCircolGradientProps): CSSObject {
+
+  const deg = 360/arrcolor.length
+  let count = 0
+    return {
+      background: `conic-gradient(${arrcolor.map(({hex})=> `${hex} ${count}deg ${count += deg}deg`).join(',')}), url(${imgUrl})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center center',
+    };
+  
 }
 
 /**

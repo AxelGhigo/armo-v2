@@ -62,6 +62,6 @@ export function AnalyticsWebsiteVisits({ title, subheader, chart, ...other }: Pr
         height={364}
         sx={{ py: 2.5, pl: 1, pr: 2.5 }}
       />
-    </Card>
+        </Card>
   );
 }
