@@ -119,7 +119,7 @@ export function NavContent({ data, slots, workspaces, sx }: NavContentProps) {
 
   return (
     <>
-      <Logo />
+      <Logo height="100px" width="200px" />
 
       {slots?.topArea}
 

@@ -11,15 +11,15 @@ export const navData = [
   {
     title: 'Dashboard',
     path: '/',
-    icon: icon('ic-analytics'),
+    icon: icon('color-swatch-svgrepo-com'),
   },
-  {
+  /* {
     title: 'User',
     path: '/user',
     icon: icon('ic-user'),
-  },
+  }, */
   {
-    title: 'Product',
+    title: 'shop',
     path: '/products',
     icon: icon('ic-cart'),
     info: (
@@ -29,9 +29,24 @@ export const navData = [
     ),
   },
   {
-    title: 'Blog',
+    title: 'Profilo',
     path: '/blog',
     icon: icon('ic-blog'),
+  },
+  {
+    title: 'assistenza',
+    path: '/assistenza',
+    icon: icon('chat-round-dots-svgrepo-com'),
+  },
+  {
+    title: 'assistenza vocale',
+    path: '/assistenza',
+    icon: icon('service-svgrepo-com'),
+  },
+  {
+    title: '⁠modalità per daltonici',
+    path: '/assistenza',
+    icon: icon('service-start-svgrepo-com'),
   },
   {
     title: 'Sign in',

@@ -44,6 +44,7 @@ export function ProductItem({ product }: { product: ProductItemProps }) {
       alt={product.name}
       src={product.coverUrl}
       sx={{
+        mt: 1,
         top: 0,
         width: 1,
         height: 1,
@@ -79,7 +80,7 @@ export function ProductItem({ product }: { product: ProductItemProps }) {
       </Box>
 
       <Stack spacing={2} sx={{ p: 3 }}>
-        <Link color="inherit" underline="hover" variant="subtitle2" noWrap>
+        <Link color="inherit" underline="hover" variant="subtitle1" noWrap>
           {product.name}
         </Link>
 

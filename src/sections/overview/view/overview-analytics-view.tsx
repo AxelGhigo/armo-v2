@@ -2,15 +2,14 @@ import { useState } from 'react';
 
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
-import { TextField, CircularProgress } from '@mui/material';
+import LocalSeeIcon from '@mui/icons-material/LocalSee';
+import { Box, TextField, IconButton } from '@mui/material';
 
-import { _posts } from 'src/_mock';
 import { DashboardContent } from 'src/layouts/dashboard';
 
-import { AnalyticsNews } from '../analytics-news';
-import { PalletStagione } from '../palet-stagioni';
 import { ShowPallet } from '../show-pallet';
 import { ListaVestiti } from '../lista-vestiti';
+import { PalletStagione } from '../palet-stagioni';
 
 // ----------------------------------------------------------------------
 
@@ -29,7 +28,7 @@ const mock = [
       { hex: '#4c4c74', name: 'Independence' },
       { hex: '#343454', name: 'Jacarta' },
     ],
-    image: 'assets/images/person/pngegg.png',
+    image: 'assets/images/person/africa.png',
   },
   {
     stagione: 'inverno',
@@ -45,7 +44,7 @@ const mock = [
       { hex: '#597fb5', name: 'Indaco' },
       { hex: '#318c2e', name: 'Verde' },
     ],
-    image: '/assets/images/person/pngegg.png',
+    image: '/assets/images/person/cina2.png',
   },
   {
     stagione: 'primavera',
@@ -61,7 +60,7 @@ const mock = [
       { hex: '#3c4943', name: 'Verde molto scuro' },
       { hex: '#4bb49b', name: 'Verde acqua' },
     ],
-    image: '/assets/images/person/pngegg.png',
+    image: '/assets/images/person/woman2.png',
   },
   {
     stagione: 'autunno',
@@ -77,63 +76,77 @@ const mock = [
       { hex: '#757269', name: 'Grigio verde' },
       { hex: '#544f3e', name: 'Verde militare' },
     ],
-    image: '/assets/images/person/pngegg.png',
+    image: '/assets/images/person/nonna.png',
   },
 ];
 
 export function OverviewAnalyticsView() {
-  const [season, setSeason] = useState('estate');
-  const [colore, setColore] = useState('#000000 ');
+  const [season, setSeason] = useState('');
+  const [colore, setColore] = useState('#000000');
 
   return (
     <DashboardContent maxWidth="xl">
-      <Typography variant="h3" sx={{ mb: { xs: 3, md: 5 } }}>
-        titole
-      </Typography>
-      <Typography variant="h5" sx={{ mb: { xs: 3, md: 5 } }}>
-        prova
-      </Typography>
+      <Box display="flex" alignContent="flex-start" justifyContent="center">
+        <img src="/assets/logo/to_be_color_logo.PNG" alt="to_be_color_logo.png" loading="lazy" />
+      </Box>
+
+      <Box
+        sx={{ mt: 3 }}
+        display="flex"
+        alignContent="flex-start"
+        justifyContent="center"
+        alignItems="flex-start"
+      >
+        <Typography variant="h4">Scopri la versione più bella di te!</Typography>
+        <IconButton aria-label="delete" color="primary">
+          <LocalSeeIcon sx={{ color: 'black' }} />
+        </IconButton>
+      </Box>
 
       <Grid container spacing={3}>
         {mock.map(({ stagione, color, image }, key) => (
           <Grid xs={12} sm={6} md={6} key={key}>
+            <Typography align="center" variant="h4">
+              {stagione}
+            </Typography>
             <PalletStagione
               title="Weekly sales"
               percent={2.6}
               total={714000}
               imgUrl={image}
               arrcolor={color}
-              icon={<img alt="icon" src="/assets/icons/glass/ic-glass-bag.svg" />}
-              chart={{
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
-                series: [22, 8, 35, 50, 82, 84, 77, 12],
-              }}
               setStagione={() => setSeason(stagione)}
             />
           </Grid>
         ))}
 
-        <Grid xs={12} sm={12} md={12}>
-          <Typography variant="h4" sx={{ mb: { xs: 3, md: 5 } }}>
-            codice colore
-          </Typography>
-          <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-        </Grid>
-
-        <Grid xs={12} sm={12} md={12}>
-          <CircularProgress />
-        </Grid>
-
-        <Grid xs={12} md={4} lg={4}>
-          <ShowPallet
-            title="colori palett"
-            handelSetColor={setColore}
-            list={mock.find(({ stagione }) => stagione === season)}
-          />
-        </Grid>
-        <Grid xs={12} md={8} lg={8}>
-          <ListaVestiti title="colori palett" colore={{ hex: colore }} />
-        </Grid>
+        {season !== '' && (
+          <>
+            <Grid xs={12} sm={12} md={12}>
+              <Box
+                display="flex"
+                alignContent="space-between"
+                alignItems="center"
+                flexDirection="column"
+              >
+                <Typography variant="h4" sx={{ mb: { xs: 3, md: 2 } }}>
+                  inserisci il codice della capsula (potrai trovare il codice nell&apos; etichetta)
+                </Typography>
+                <TextField id="outlined-basic" label="es. 00ff00" variant="outlined" />
+              </Box>
+            </Grid>
+            <Grid xs={12} md={4} lg={4}>
+              <ShowPallet
+                title="colori palette"
+                handelSetColor={setColore}
+                list={mock.find(({ stagione }) => stagione === season)}
+              />
+            </Grid>
+            <Grid xs={12} md={8} lg={8}>
+              <ListaVestiti title="colori palette" colore={{ hex: colore }} />
+            </Grid>
+          </>
+        )}
       </Grid>
     </DashboardContent>
   );

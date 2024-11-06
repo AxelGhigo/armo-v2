@@ -1,9 +1,7 @@
 import type { CardProps } from '@mui/material/Card';
-import type { ChartOptions } from 'src/components/chart';
 
-import { Box, CardActionArea } from '@mui/material';
 import Card from '@mui/material/Card';
-import { useTheme } from '@mui/material/styles';
+import { Box, CardActionArea } from '@mui/material';
 
 import { bgCircolGradient } from 'src/theme/styles';
 
@@ -20,20 +18,12 @@ type Props = CardProps & {
   percent: number;
   arrcolor: colorprops[];
   imgUrl: string;
-  icon: React.ReactNode;
-  chart: {
-    series: number[];
-    categories: string[];
-    options?: ChartOptions;
-  };
   setStagione: Function;
 };
 
 export function PalletStagione({
-  icon,
   title,
   total,
-  chart,
   percent,
   arrcolor,
   imgUrl,
@@ -45,13 +35,12 @@ export function PalletStagione({
     <Card
       sx={{
         ...bgCircolGradient({
-          arrcolor,
+          arrcolor: arrcolor.concat(arrcolor),
           imgUrl,
         }),
         boxShadow: 'none',
         position: 'relative',
         backgroundColor: 'common.white',
-        height: '300px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

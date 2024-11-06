@@ -34,15 +34,6 @@ export const Logo = forwardRef<HTMLDivElement, LogoProps>(
     /*
     * OR using local (public folder)
     *
-    const singleLogo = (
-      <Box
-        alt="Single logo"
-        component="img"
-        src={`/logo/logo-single.svg`}
-        width="100%"
-        height="100%"
-      />
-    );
 
     const fullLogo = (
       <Box
@@ -55,7 +46,16 @@ export const Logo = forwardRef<HTMLDivElement, LogoProps>(
     );
     *
     */
-
+    const singleLogo = (
+      <Box
+        alt="Single logo"
+        component="img"
+        src="assets/logo/to_be_color_logo.PNG"
+        width="100%"
+        height="100%"
+      />
+    );
+    /* 
     const singleLogo = (
       <svg
         width="100%"
@@ -117,7 +117,7 @@ export const Logo = forwardRef<HTMLDivElement, LogoProps>(
         </defs>
       </svg>
     );
-
+ */
     const fullLogo = (
       <svg
         width="100%"

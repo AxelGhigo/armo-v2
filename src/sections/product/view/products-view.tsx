@@ -10,7 +10,7 @@ import { DashboardContent } from 'src/layouts/dashboard';
 
 import { ColorPreview } from 'src/components/color-utils';
 
-import { ProductItem } from '../product-item';
+import { ProductItem, ProductItemProps } from '../product-item';
 import { ProductSort } from '../product-sort';
 import { CartIcon } from '../product-cart-widget';
 import { ProductFilters } from '../product-filters';
@@ -49,6 +49,36 @@ const COLOR_OPTIONS = [
   '#1890FF',
   '#94D82D',
   '#FFC107',
+];
+
+const vestiti: ProductItemProps[] = [
+  {
+    id: '1',
+    price: 49.99,
+    name: 'Maglietta',
+    priceSale: 59.99,
+    coverUrl: `/assets/images/product/magliettaBianca.jpeg`,
+    colors: ['#FFFFFF'],
+    status: 'new',
+  },
+  {
+    id: '2',
+    price: 59.99,
+    name: 'Maglietta a maniche lunghe',
+    priceSale: null,
+    coverUrl: `/assets/images/product/maglioneBianco.jpeg`,
+    colors: ['#FFFFFF'],
+    status: '',
+  },
+  {
+    id: '3',
+    price: 89.99,
+    name: 'Felpa ',
+    priceSale: 199.99,
+    coverUrl: `/assets/images/product/felpaBianca.jpeg`,
+    colors: ['#FFFFFF'],
+    status: 'sale',
+  },
 ];
 
 const defaultFilters = {
@@ -133,15 +163,12 @@ export function ProductsView() {
       </Box>
 
       <Grid container spacing={3}>
-        {_products.map((product) => (
-          <Grid key={product.id} xs={12} sm={6} md={3}>
-            <ColorPreview colors={product.colors} />
+        {vestiti.map((product) => (
+          <Grid key={product.id} xs={12} sm={6} md={4}>
             <ProductItem product={product} />
           </Grid>
         ))}
       </Grid>
-
-      <Pagination count={10} color="primary" sx={{ mt: 8, mx: 'auto' }} />
     </DashboardContent>
   );
 }
