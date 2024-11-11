@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
@@ -12,7 +12,6 @@ import { ListaVestiti } from '../lista-vestiti';
 import { PalletStagione } from '../palet-stagioni';
 
 // ----------------------------------------------------------------------
-
 const mock = [
   {
     stagione: 'estate',
@@ -40,7 +39,6 @@ const mock = [
       { hex: '#2376b1', name: 'Azzurro scuro' },
       { hex: '#36265e', name: 'Viola' },
       { hex: '#0f700f', name: 'Verde scuro' },
-      { hex: '#db1323', name: 'Rosso' },
       { hex: '#597fb5', name: 'Indaco' },
       { hex: '#318c2e', name: 'Verde' },
     ],
@@ -83,6 +81,7 @@ const mock = [
 export function OverviewAnalyticsView() {
   const [season, setSeason] = useState('');
   const [colore, setColore] = useState('#000000');
+  const scroldown = useRef<HTMLDivElement | null>(null);
 
   return (
     <DashboardContent maxWidth="xl">
@@ -115,14 +114,19 @@ export function OverviewAnalyticsView() {
               total={714000}
               imgUrl={image}
               arrcolor={color}
-              setStagione={() => setSeason(stagione)}
+              setStagione={() => {
+                setSeason(stagione);
+                setTimeout(() => {
+                  scroldown.current?.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+              }}
             />
           </Grid>
         ))}
 
         {season !== '' && (
           <>
-            <Grid xs={12} sm={12} md={12}>
+            <Grid ref={scroldown} xs={12} sm={12} md={12}>
               <Box
                 display="flex"
                 alignContent="space-between"
