@@ -8,6 +8,7 @@ import { CardMedia, CardActions } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
+// eslint-disable-next-line react/prop-types
 export function Photo({ closeCamera }) {
   const videoRef = useRef(null);
   const photoRef = useRef(null);
