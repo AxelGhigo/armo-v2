@@ -2,17 +2,13 @@ import { useRef, useState, useEffect } from 'react';
 
 import Card from '@mui/material/Card';
 import IconButton from '@mui/material/IconButton';
-import CameraIcon from '@mui/icons-material/Camera';
 import CloseIcon from '@mui/icons-material/Close';
-import { Button, CardMedia, CardActions } from '@mui/material';
+import CameraIcon from '@mui/icons-material/Camera';
+import { CardMedia, CardActions } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
-type PhotoPropd = {
-  closeCamera: Function
-}
-
-export function Photo({ closeCamera }:PhotoPropd) {
+export function Photo({ closeCamera }) {
   const videoRef = useRef(null);
   const photoRef = useRef(null);
   const [hasPhoto, setHasPhoto] = useState(false);
