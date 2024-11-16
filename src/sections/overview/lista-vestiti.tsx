@@ -28,7 +28,7 @@ type CardsPoprs = {
   url: string;
 };
 const vesiti = {
-  url: './assets/images/vestiti/tShort2.png',
+  url: './public/assets/images/vestiti/t-shirt bianca.png',
   status: '',
   name: 'nike',
   price: 22.34,
@@ -41,7 +41,7 @@ export function ListaVestiti({ title, subheader, colore, ...other }: Props) {
     <Card {...other}>
       <Box
         component="img"
-        sx={{ filter: `opacity(0.4) drop-shadow(0 0 0 ${colore.hex});` }}
+        sx={{ filter: `opacity(0.5) drop-shadow(0 0 0 ${colore.hex});` }}
         alt={vesiti.name}
         src={vesiti.url}
       />

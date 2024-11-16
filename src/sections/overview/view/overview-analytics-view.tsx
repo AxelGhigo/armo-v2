@@ -10,6 +10,7 @@ import { DashboardContent } from 'src/layouts/dashboard';
 import { ShowPallet } from '../show-pallet';
 import { ListaVestiti } from '../lista-vestiti';
 import { PalletStagione } from '../palet-stagioni';
+import { Photo } from '../photo';
 
 // ----------------------------------------------------------------------
 const mock = [
@@ -58,7 +59,7 @@ const mock = [
       { hex: '#3c4943', name: 'Verde molto scuro' },
       { hex: '#4bb49b', name: 'Verde acqua' },
     ],
-    image: '/assets/images/person/woman2.png',
+    image: '/assets/images/person/uomo.png',
   },
   {
     stagione: 'autunno',
@@ -81,9 +82,12 @@ const mock = [
 export function OverviewAnalyticsView() {
   const [season, setSeason] = useState('');
   const [colore, setColore] = useState('#000000');
+  const [activeVideo, setActiveVideo] = useState(false);
   const scroldown = useRef<HTMLDivElement | null>(null);
 
-  return (
+  return activeVideo ? (
+    <Photo closeCamera={() => setActiveVideo(false)} />
+  ) : (
     <DashboardContent maxWidth="xl">
       <Box display="flex" alignContent="flex-start" justifyContent="center">
         <img src="/assets/logo/to_be_color_logo.PNG" alt="to_be_color_logo.png" loading="lazy" />
@@ -97,7 +101,7 @@ export function OverviewAnalyticsView() {
         alignItems="flex-start"
       >
         <Typography variant="h4">Scopri la versione più bella di te!</Typography>
-        <IconButton aria-label="delete" color="primary">
+        <IconButton aria-label="delete" color="primary" onClick={() => setActiveVideo(true)}>
           <LocalSeeIcon sx={{ color: 'black' }} />
         </IconButton>
       </Box>
@@ -117,7 +121,7 @@ export function OverviewAnalyticsView() {
               setStagione={() => {
                 setSeason(stagione);
                 setTimeout(() => {
-                  scroldown.current?.scrollIntoView({ behavior: 'smooth' });
+                  scroldown.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 300);
               }}
             />
