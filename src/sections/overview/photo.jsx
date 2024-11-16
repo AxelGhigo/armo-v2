@@ -50,7 +50,7 @@ export function Photo({ closeCamera }) {
   }, [videoRef]);
 
   return (
-    <Card>
+    <Card sx={{ mx: '30px' }}>
       <CardMedia component="video" ref={hasPhoto ? photoRef : videoRef} />
       <CardActions sx={{ display: 'flex', justifyContent: 'space-between', paddingLeft: '46%' }}>
         <IconButton aria-label="snap" size="large" onClick={tackPhoto}>
