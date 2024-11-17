@@ -28,7 +28,7 @@ type CardsPoprs = {
   url: string;
 };
 const vesiti = {
-  url: '/assets/images/vestiti/t-shirt bianca.png',
+  url: '/assets/images/vestiti/tshort2.png',
   status: '',
   name: 'nike',
   price: 22.34,
